@@ -1,0 +1,19 @@
+html,body,h1,h2,h3,h4,h5,h6,p,ul,ol,dl,dd,form,fieldset,legend,input,select,textarea,button,caption,th,td,blockquote,pre {
+    margin: 0;
+    padding: 0
+}
+ol,ul{list-style-type: none;}
+.container{margin-top: 5%;}
+.view{height: 30px;line-height: 30px;position: relative;}
+.item-lists{margin-top: 10px;}
+.selected{background-color: #e6e6e6;}
+input.toggle{margin-right: 6px;}
+button.delete{float:right;margin-top: 4px;}
+ul.filters{display: -webkit-box;width: 215px;}
+ul.filters li{-webkit-box-flex: 3;}
+li.complete label{transition: all ease 1s;text-decoration: line-through; color:#ccc;}
+label{width: 60%}
+li.edit .editing{display: inline-block;}
+.editing{display: none;position: absolute;left:20px;width: 100%;height: 30px;}
+.operate-list{margin: 18px 0;position: relative;}
+.clear-completed{position: absolute;right: 0;top: 0;}

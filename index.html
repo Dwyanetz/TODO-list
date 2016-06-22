@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>TODO List</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,minimum-scale=1,user-scalable=no" />
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/master.css" charset="utf-8">
+  </head>
+  <body>
+    <section id="app" class="container">
+      <input type="text" class="form-control" id="exampleInput" v-model="newTodo" @keyup.enter="addTodo" placeholder="What needs to be done?">
+      <ul class="item-lists" @mouseleave="hideDeleteBtn">
+        <li v-for="list in filterLists" :class="{complete:list.completed,edit:list==alterTodo}" @mouseenter="showDeleteBtn($index)">
+          <div class="view">
+            <input class="toggle" type="checkbox" v-model="list.completed">
+            <label @dblclick="editTodo(list)">{{list.text}}</label>
+            <input type="text" class="editing" v-model="list.text"
+                   @keyup.enter="doneEdit(list)" @blur="doneEdit(list)"/>
+            <button class="delete btn btn-danger btn-xs" @click="removeTodo(list)" v-show="list.isShowDelBtn">delete</button>
+          </div>
+        </li>
+      </ul>
+      <div class="operate-list">
+        <ul class="filters">
+          <li><a href="#/all" class="btn btn-default btn-sm" :class="{selected:choose==='all'}" @click="changeChoose('all')">All</a></li>
+          <li><a href="#/active" class="btn btn-default btn-sm" :class="{selected:choose==='active'}" @click="changeChoose('active')">Active</a></li>
+          <li><a href="#/completed" class="btn btn-default btn-sm" :class="{selected:choose==='completed'}" @click="changeChoose('completed')">Completed</a></li>
+        </ul>
+        <button class="clear-completed btn btn-primary btn-sm" v-show="todoLists.length>remaining.length" @click="clearComplete">Clear completed
+        </button>
+      </div>
+      <span class="todo-count">
+        <strong>{{remaining.length}}</strong> items left
+      </span>
+    </section>
+  </body>
+  <script src="js/jquery.min.js" charset="utf-8"></script>
+  <script src="js/vue.js"></script>
+  <script src="js/demo.js" charset="utf-8"></script>
+</html>
