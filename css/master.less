@@ -1,0 +1,40 @@
+html,body,h1,h2,h3,h4,h5,h6,p,ul,ol,dl,dd,form,fieldset,legend,input,select,textarea,button,caption,th,td,blockquote,pre {
+  margin: 0;
+  padding: 0
+}
+ol,ul{list-style-type: none;}
+
+.container{margin-top: 5%;}
+
+ul.item-lists{ margin-top: 10px;
+  li{
+    &.complete{
+      label{transition: all ease 1s;text-decoration: line-through; color:#ccc;}
+    }
+    &.edit{
+      .editing{display: inline-block;}
+    }
+  }
+}
+
+.view{ height: 30px;line-height: 30px;position: relative;
+  input.toggle{ margin-right: 6px;}
+  label{width: 60%}
+  .editing{display: none;position: absolute;left:20px;width: 100%;height: 30px;}
+  button.delete{ float:right;margin-top: 4px;}
+}
+
+.operate-list{margin: 18px 0;position: relative;
+  ul.filters{display: -webkit-box;width: 215px;
+    li{-webkit-box-flex: 3;
+      a.selected{background-color: #e6e6e6;}
+    }
+  }
+  .clear-completed{position: absolute;right: 0;top: 0;}
+}
+
+
+
+
+
+

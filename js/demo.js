@@ -57,9 +57,9 @@ var vm=new Vue({
     },
     methods:{
         addTodo:function(){
-            var text = this.newTodo.trim();
-            if (text) {
-                this.todoLists.push({text:text,isShowDelBtn:false,completed:false});
+            var todo = this.newTodo.trim();
+            if (todo) {
+                this.todoLists.push({text:todo,isShowDelBtn:false,completed:false});
                 this.newTodo = '';
             }
         },
